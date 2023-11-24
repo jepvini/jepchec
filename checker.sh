@@ -16,7 +16,8 @@ then
   for dir in "$2"/*/*
   do
     files=( "$dir"/*.flac )
-    flac -wt "$files"
+    echo "$dir"
+    flac -wts "$files"
   done
   exit
 fi
