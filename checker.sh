@@ -16,6 +16,10 @@ then
   for dir in "$2"/*/*
   do
     files=( "$dir"/*.flac )
+    if [ "$(echo "$files" | grep "jpeg")" ];
+    then
+      continue
+    fi
     echo "$dir"
     flac -wts "$files"
   done
