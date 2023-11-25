@@ -19,6 +19,9 @@ then
     if [ "$(echo "$files" | grep "jpeg")" ];
     then
       continue
+    elif [ "$(echo "$files" | grep "dsf")" ];
+    then
+      continue
     fi
     echo "$dir"
     flac -wts "$files"
